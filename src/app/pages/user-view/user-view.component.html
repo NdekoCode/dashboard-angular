@@ -1,10 +1,16 @@
 <section class="flex">
   <app-sidebar />
-  <main
-    class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200"
+  <section
+    class="ease-soft-in-out w-full xl:ml-[17rem] relative h-full max-h-screen rounded-xl transition-all duration-200"
   >
     <app-dashboard-navbar />
+    <div class="flex items-center">
+      <!-- <app-show-date-day /> -->
+      <app-global-avg-data />
+    </div>
 
-    <app-user-table-list />
-  </main>
+    <main class="w-full px-6 py-6 mx-auto">
+      <app-user-table-list />
+    </main>
+  </section>
 </section>

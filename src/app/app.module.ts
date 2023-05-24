@@ -9,6 +9,9 @@ import { UserTableItemComponent } from './shared/components/user-table-item/user
 import { UserViewComponent } from './pages/user-view/user-view.component';
 import { ServicesViewComponent } from './pages/services-view/services-view.component';
 import { DashboardNavbarComponent } from './shared/components/dashboard-navbar/dashboard-navbar.component';
+import { AppLoadingComponent } from './shared/components/app-loading/app-loading.component';
+import { ShowDateDayComponent } from './shared/components/show-date-day/show-date-day.component';
+import { GlobalAvgDataComponent } from './shared/components/global-avg-data/global-avg-data.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { DashboardNavbarComponent } from './shared/components/dashboard-navbar/d
     UserTableItemComponent,
     UserViewComponent,
     ServicesViewComponent,
-    DashboardNavbarComponent
+    DashboardNavbarComponent,
+    AppLoadingComponent,
+    ShowDateDayComponent,
+    GlobalAvgDataComponent
   ],
   imports: [
     BrowserModule,
