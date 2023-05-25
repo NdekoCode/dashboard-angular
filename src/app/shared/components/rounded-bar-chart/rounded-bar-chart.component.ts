@@ -12,9 +12,7 @@ export class RoundedBarChartComponent {
   chartData: number[] = [];
   chartDatalabels: any[] = [];
   ngOnInit() {
-    this.ctx = document.getElementById(
-      'line-rounded-chart'
-    ) as HTMLCanvasElement;
+    this.ctx = document.getElementById('line-rounded-bar') as HTMLCanvasElement;
     this.ctx = this.ctx.getContext('2d') as CanvasRenderingContext2D;
 
     const gradientStroke1 = this.ctx.createLinearGradient(0, 230, 0, 50);
@@ -96,6 +94,6 @@ export class RoundedBarChartComponent {
         },
       },
     };
-    const myChart = new Chart(this.ctx, this.config);
+    new Chart(this.ctx, this.config);
   }
 }
