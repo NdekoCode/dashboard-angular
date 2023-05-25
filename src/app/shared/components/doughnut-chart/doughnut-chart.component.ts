@@ -1,10 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ChartConfiguration } from 'chart.js';
 
 @Component({
   selector: 'app-doughnut-chart',
   templateUrl: './doughnut-chart.component.html',
-  styleUrls: ['./doughnut-chart.component.scss']
 })
-export class DoughnutChartComponent {
-
+export class DoughnutChartComponent implements OnInit {
+  config!: ChartConfiguration | any;
+  ngOnInit() {
+    this.config = {
+      type: 'doughnut',
+      data: {
+        labels: ['Africa', 'Asia', 'Europe', 'Latin America', 'North America'],
+        datasets: [
+          {
+            label: 'Population (millions)',
+            backgroundColor: [
+              '#3e95cd',
+              '#8e5ea2',
+              '#3cba9f',
+              '#e8c3b9',
+              '#c45850',
+            ],
+            data: [2478, 5267, 734, 784, 433],
+          },
+        ],
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Predicted world population (millions) in 2050',
+        },
+      },
+    };
+  }
 }

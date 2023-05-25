@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-bare-chart',
@@ -8,10 +7,7 @@ import { Chart } from 'chart.js';
 export class BareChartComponent {
   ctx!: HTMLCanvasElement | CanvasRenderingContext2D;
   config: any;
-  chartDatalabels: any[] = [];
   ngOnInit() {
-    this.ctx = document.getElementById('bar-chart') as HTMLCanvasElement;
-    this.ctx = this.ctx.getContext('2d') as CanvasRenderingContext2D;
     this.config = {
       type: 'bar',
       data: {
@@ -54,6 +50,5 @@ export class BareChartComponent {
         legend: { display: false },
       },
     };
-    new Chart(this.ctx, this.config);
   }
 }

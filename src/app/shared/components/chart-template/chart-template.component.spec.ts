@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormAndChartComponent } from './form-and-chart.component';
+import { ChartTemplateComponent } from './chart-template.component';
 
-describe('FormAndChartComponent', () => {
-  let component: FormAndChartComponent;
-  let fixture: ComponentFixture<FormAndChartComponent>;
+describe('ChartTemplateComponent', () => {
+  let component: ChartTemplateComponent;
+  let fixture: ComponentFixture<ChartTemplateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormAndChartComponent ]
+      declarations: [ ChartTemplateComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FormAndChartComponent);
+    fixture = TestBed.createComponent(ChartTemplateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

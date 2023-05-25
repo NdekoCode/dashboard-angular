@@ -1,1 +1,23 @@
-<p>doughnut-chart works!</p>
+<app-chart-template
+  title="Users overview"
+  chartId="doughnut-chart"
+  [chartConfig]="config"
+>
+  <p class="flex items-center text-sm leading-normal">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-5 h-5"
+      viewBox="0 0 512 512"
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="48"
+        d="M112 244l144-144 144 144M256 120v292"
+      />
+    </svg>
+    <span class="font-semibold">4% more</span> in 2021
+  </p>
+</app-chart-template>
