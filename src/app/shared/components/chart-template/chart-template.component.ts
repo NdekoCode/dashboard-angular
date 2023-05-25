@@ -4,14 +4,13 @@ import { Chart } from 'chart.js';
 @Component({
   selector: 'app-chart-template',
   templateUrl: './chart-template.component.html',
-  styleUrls: ['./chart-template.component.scss'],
 })
 export class ChartTemplateComponent implements AfterViewInit {
   @Input() chartId!: string;
   @Input() chartName: string = 'Users overview';
   @Input() isTemplate: boolean = false;
   @Input() bgChart: string = '';
-
+  chartInstance!: Chart;
   @Input() chartConfig: object = {};
   @Input() chartStyle: object = {
     display: 'block',
@@ -30,6 +29,9 @@ export class ChartTemplateComponent implements AfterViewInit {
     console.log(this.ctx);
     this.ctx = this.ctx.getContext('2d') as CanvasRenderingContext2D;
     this.config = this.chartConfig;
-    new Chart(this.ctx, this.config);
+
+    if (this.chartInstance === undefined) {
+      this.chartInstance = new Chart(this.ctx, this.config);
+    }
   }
 }

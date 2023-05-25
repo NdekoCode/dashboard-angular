@@ -4,7 +4,6 @@ import { Chart } from 'chart.js';
 @Component({
   selector: 'app-rounded-bar-chart',
   templateUrl: './rounded-bar-chart.component.html',
-  styleUrls: ['./rounded-bar-chart.component.scss'],
 })
 export class RoundedBarChartComponent {
   ctx!: HTMLCanvasElement | CanvasRenderingContext2D;

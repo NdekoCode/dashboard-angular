@@ -3,7 +3,6 @@ import { Chart } from 'chart.js';
 @Component({
   selector: 'app-charts',
   templateUrl: './charts.component.html',
-  styleUrls: ['./charts.component.scss'],
 })
 export class ChartsComponent {
   ctx!: HTMLCanvasElement | CanvasRenderingContext2D;
