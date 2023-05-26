@@ -11,10 +11,11 @@
       "phone": "+63 791 675 8914",
       "username": "atuny0",
       "password": "9uQFF1Lh",
-      "avatar": "https://robohash.org/hicveldicta.png",
+      "avatar": "/assets/images/user-1.jpg",
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "online",
       "ip": "117.29.86.254",
       "address": {
         "address": "1745 T Street Southeast",
@@ -55,10 +56,11 @@
       "phone": "+7 813 117 7139",
       "username": "hbingley1",
       "password": "CQutx25i8r",
-      "avatar": "https://robohash.org/doloremquesintcorrupti.png",
+      "avatar": "/assets/images/user-2.jpg",
       "verified": true,
       "role": "user",
       "googleId": "",
+      "userStatus": "offline",
       "ip": "253.240.20.181",
       "address": {
         "address": "6007 Applegate Lane",
@@ -99,10 +101,11 @@
       "phone": "+63 739 292 7942",
       "username": "rshawe2",
       "password": "OWsTbMUgFc",
-      "avatar": "https://robohash.org/consequunturautconsequatur.png",
+      "avatar": "/assets/images/user-3.jpg",
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "205.226.160.3",
       "address": {
         "address": "560 Penstock Drive",
@@ -134,19 +137,20 @@
     },
     {
       "id": 4,
-      "firstName": "Miles",
-      "lastName": "Cummerata",
-      "middleName": "Maggio",
-      "accountStatus": "active",
+      "firstName": "Arick",
+      "lastName": "Bulakali",
+      "middleName": "Ndekocode",
+      "accountStatus": "online",
       "hasPassword": true,
       "email": "yraigatt3@nature.com",
-      "phone": "+86 461 145 4186",
+      "phone": "+243 991 487 950",
       "username": "yraigatt3",
       "password": "sRQxjPfdS",
-      "avatar": "https://robohash.org/facilisdignissimosdolore.png",
+      "avatar": "/assets/images/user-4.jpg",
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "online",
       "ip": "243.20.78.113",
       "address": {
         "address": "150 Carter Street",
@@ -191,6 +195,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "103.72.86.183",
       "address": {
         "address": "2721 Lindsay Avenue",
@@ -235,6 +240,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "49.201.206.36",
       "address": {
         "address": "18 Densmore Drive",
@@ -279,6 +285,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "online",
       "ip": "25.207.107.146",
       "address": {
         "address": "637 Britannia Drive",
@@ -323,6 +330,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "91.200.56.127",
       "address": {
         "address": "5601 West Crocus Drive",
@@ -367,6 +375,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "online",
       "ip": "78.170.185.120",
       "address": {
         "address": "5403 Illinois Avenue",
@@ -411,6 +420,7 @@
       "verified": true,
       "role": "user",
       "googleId": "",
+      "userStatus": "offline",
       "ip": "73.15.179.178",
       "address": {
         "address": "8821 West Myrtle Avenue",
@@ -455,6 +465,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "online",
       "ip": "137.235.164.173",
       "address": {
         "address": "2203 7th Street Road",
@@ -499,6 +510,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "74.80.53.208",
       "address": {
         "address": "6463 Vrain Street",
@@ -542,6 +554,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "163.245.232.27",
       "address": {
         "address": "87 Horseshoe Drive",
@@ -586,6 +599,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "174.238.43.126",
       "address": {
         "address": "60 Desousa Drive",
@@ -630,6 +644,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "78.43.74.226",
       "address": {
         "address": "4 Old Colony Way",
@@ -674,6 +689,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "82.170.69.15",
       "address": {
         "address": "314 South 17th Street",
@@ -718,6 +734,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "online",
       "ip": "75.75.234.243",
       "address": {
         "address": "1649 Timberridge Court",
@@ -762,6 +779,7 @@
       "verified": true,
       "role": "user",
       "googleId": "",
+      "userStatus": "offline",
       "ip": "29.82.54.30",
       "address": {
         "address": "5461 West Shades Valley Drive",
@@ -806,6 +824,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "90.202.216.39",
       "address": {
         "address": "629 Debbie Drive",
@@ -850,6 +869,7 @@
       "verified": true,
       "role": "user",
       "googleId": "",
+      "userStatus": "offline",
       "ip": "59.43.194.22",
       "address": {
         "address": "22572 Toreador Drive",
@@ -894,6 +914,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "online",
       "ip": "87.213.156.73",
       "address": {
         "address": "3034 Mica Street",
@@ -938,6 +959,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "71.57.235.192",
       "address": {
         "address": "3729 East Mission Boulevard",
@@ -982,6 +1004,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "141.14.53.176",
       "address": {
         "address": "5114 Greentree Drive",
@@ -1026,6 +1049,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "online",
       "ip": "116.92.198.102",
       "address": {
         "address": "3466 Southview Avenue",
@@ -1070,6 +1094,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "48.30.193.203",
       "address": {
         "address": "1513 Cathy Street",
@@ -1114,6 +1139,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "93.246.47.59",
       "address": {
         "address": "600 West 19th Avenue",
@@ -1158,6 +1184,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "100.159.51.104",
       "address": {
         "address": "1208 Elkader Court North",
@@ -1202,6 +1229,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "online",
       "ip": "51.102.180.216",
       "address": {
         "address": "210 Green Road",
@@ -1246,6 +1274,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "197.37.13.163",
       "address": {
         "address": "49548 Road 200",
@@ -1290,6 +1319,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "97.11.116.84",
       "address": {
         "address": "81 Seaton Place Northwest",
@@ -1334,6 +1364,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "99.4.101.248",
       "address": {
         "address": "1267 Martin Street",
@@ -1378,6 +1409,7 @@
       "verified": true,
       "role": "user",
       "googleId": "",
+      "userStatus": "offline",
       "ip": "168.207.94.240",
       "address": {
         "address": "7431 Candace Way",
@@ -1422,6 +1454,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "online",
       "ip": "168.89.147.33",
       "address": {
         "address": "1407 Walden Court",
@@ -1466,6 +1499,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "142.92.51.246",
       "address": {
         "address": "5906 Milton Avenue",
@@ -1510,6 +1544,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "209.208.151.156",
       "address": {
         "address": "74 Springfield Street",
@@ -1554,6 +1589,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "133.21.162.149",
       "address": {
         "address": "2905 Stonebridge Court",
@@ -1598,6 +1634,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "online",
       "ip": "128.203.200.135",
       "address": {
         "address": "20930 Todd Valley Road",
@@ -1642,6 +1679,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "2.74.78.180",
       "address": {
         "address": "5928 West Mauna Loa Lane",
@@ -1686,6 +1724,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "97.138.85.170",
       "address": {
         "address": "802 Madison Street Northwest",
@@ -1730,6 +1769,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "online",
       "ip": "232.181.251.16",
       "address": {
         "address": "2811 Battery Place Northwest",
@@ -1774,6 +1814,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "89.14.124.72",
       "address": {
         "address": "210 Lacross Lane",
@@ -1818,6 +1859,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "online",
       "ip": "22.177.150.127",
       "address": {
         "address": "2010 Rising Hill Drive",
@@ -1862,6 +1904,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "237.72.61.168",
       "address": {
         "address": "388 East Main Street",
@@ -1905,6 +1948,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "96.249.29.87",
       "address": {
         "address": "450 Kinhawk Drive",
@@ -1949,6 +1993,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "66.117.210.157",
       "address": {
         "address": "131 Westerly Street",
@@ -1993,6 +2038,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "231.120.98.63",
       "address": {
         "address": "308 Woodleaf Court",
@@ -2037,6 +2083,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "154.55.210.162",
       "address": {
         "address": "8502 Madrone Avenue",
@@ -2081,6 +2128,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "214.253.250.174",
       "address": {
         "address": "23 Sable Run Lane",
@@ -2125,6 +2173,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "1.231.9.95",
       "address": {
         "address": "716 Waller Road",
@@ -2169,6 +2218,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "203.203.88.16",
       "address": {
         "address": "416 McIver Street",
@@ -2213,6 +2263,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "36.194.219.28",
       "address": {
         "address": "1508 Massachusetts Avenue Southeast",
@@ -2257,6 +2308,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "113.128.207.9",
       "address": {
         "address": "5615 West Villa Maria Drive",
@@ -2301,6 +2353,7 @@
       "verified": true,
       "role": "user",
       "googleId": "",
+      "userStatus": "offline",
       "ip": "14.135.254.187",
       "address": {
         "address": "3162 Martin Luther King Junior Boulevard",
@@ -2345,6 +2398,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "217.161.47.226",
       "address": {
         "address": "5306 Ritchie Highway",
@@ -2389,6 +2443,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "238.23.108.169",
       "address": {
         "address": "109 Summit Street",
@@ -2433,6 +2488,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "109.221.117.55",
       "address": {
         "address": "816 West 19th Avenue",
@@ -2477,6 +2533,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "105.48.143.152",
       "address": {
         "address": "172 Alburg Springs Road",
@@ -2521,6 +2578,7 @@
       "verified": true,
       "role": "user",
       "googleId": "",
+      "userStatus": "offline",
       "ip": "254.192.2.34",
       "address": {
         "address": "159 Downey Drive",
@@ -2565,6 +2623,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "233.181.44.204",
       "address": {
         "address": "125 John Street",
@@ -2609,6 +2668,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "30.221.38.174",
       "address": {
         "address": "1101 Lotus Avenue",
@@ -2653,6 +2713,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "59.30.103.255",
       "address": {
         "address": "8376 Albacore Drive",
@@ -2697,6 +2758,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "224.72.156.182",
       "address": {
         "address": "491 Arabian Way",
@@ -2741,6 +2803,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "113.236.181.20",
       "address": {
         "address": "12245 West 71st Place",
@@ -2785,6 +2848,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "89.214.49.199",
       "address": {
         "address": "80 North East Street",
@@ -2829,6 +2893,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "133.119.134.189",
       "address": {
         "address": "4695 East Huntsville Road",
@@ -2873,6 +2938,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "36.26.183.229",
       "address": {
         "address": "310 Timrod Road",
@@ -2917,6 +2983,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "59.63.184.139",
       "address": {
         "address": "1364 Capri Drive",
@@ -2961,6 +3028,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "32.29.39.239",
       "address": {
         "address": "132 Laurel Green Court",
@@ -3005,6 +3073,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "44.110.184.210",
       "address": {
         "address": "6657 West Rose Garden Lane",
@@ -3048,6 +3117,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "53.240.4.220",
       "address": {
         "address": "519 West 75th Avenue",
@@ -3092,6 +3162,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "230.215.251.24",
       "address": {
         "address": "31353 Santa Elena Way",
@@ -3136,6 +3207,7 @@
       "verified": true,
       "role": "user",
       "googleId": "",
+      "userStatus": "offline",
       "ip": "100.0.154.64",
       "address": {
         "address": "8398 West Denton Lane",
@@ -3180,6 +3252,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "62.147.239.104",
       "address": {
         "address": "700 Winston Place",
@@ -3224,6 +3297,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "229.6.213.118",
       "address": {
         "address": "232 Maine Avenue",
@@ -3268,6 +3342,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "210.247.74.88",
       "address": {
         "address": "1 Kempf Drive",
@@ -3312,6 +3387,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "243.211.123.33",
       "address": {
         "address": "5811 Crossings Boulevard",
@@ -3356,6 +3432,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "205.139.8.233",
       "address": {
         "address": "5108 Franklin Street",
@@ -3400,6 +3477,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "217.194.61.66",
       "address": {
         "address": "913 Fallview Trail",
@@ -3444,6 +3522,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "29.114.152.100",
       "address": {
         "address": "270 Chrissy's Court",
@@ -3487,6 +3566,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "149.68.215.215",
       "address": {
         "address": "130 Old Route 103",
@@ -3531,6 +3611,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "20.248.194.145",
       "address": {
         "address": "10826 Pointe Royal Drive",
@@ -3575,6 +3656,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "142.244.245.144",
       "address": {
         "address": "74 Ranch Drive",
@@ -3619,6 +3701,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "49.124.97.233",
       "address": {
         "address": "6601 West Ocotillo Road",
@@ -3663,6 +3746,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "67.206.255.119",
       "address": {
         "address": "19416 Barclay Road",
@@ -3707,6 +3791,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "93.243.150.239",
       "address": {
         "address": "1347 Blackwalnut Court",
@@ -3751,6 +3836,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "104.39.129.116",
       "address": {
         "address": "1770 Colony Way",
@@ -3795,6 +3881,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "164.209.79.214",
       "address": {
         "address": "165 Saint John Street",
@@ -3839,6 +3926,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "176.150.241.186",
       "address": {
         "address": "2409 Research Boulevard",
@@ -3883,6 +3971,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "235.196.18.18",
       "address": {
         "address": "1903 Bashford Manor Lane",
@@ -3927,6 +4016,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "188.201.134.99",
       "address": {
         "address": "8315 Surf Drive",
@@ -3971,6 +4061,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "188.6.152.4",
       "address": {
         "address": "3301 Old Muldoon Road",
@@ -4015,6 +4106,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "36.20.63.56",
       "address": {
         "address": "8800 Cordell Circle",
@@ -4059,6 +4151,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "116.200.195.116",
       "address": {
         "address": "117 East Cook Avenue",
@@ -4103,6 +4196,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "60.10.180.109",
       "address": {
         "address": "6231 North 67th Avenue",
@@ -4147,6 +4241,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "225.83.178.174",
       "address": {
         "address": "8505 Waters Avenue",
@@ -4191,6 +4286,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "173.217.143.37",
       "address": {
         "address": "7 Underwood Place Northwest",
@@ -4235,6 +4331,7 @@
       "verified": true,
       "role": "user",
       "googleId": "",
+      "userStatus": "offline",
       "ip": "50.175.249.235",
       "address": {
         "address": "21950 Arnold Center Road",
@@ -4279,6 +4376,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "67.60.249.57",
       "address": {
         "address": "1427 South Carolina Avenue Southeast",
@@ -4323,6 +4421,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "offline",
       "ip": "69.124.254.249",
       "address": {
         "address": "1420 Turtleback Trail",
@@ -4367,6 +4466,7 @@
       "verified": true,
       "isTfaEnabled": false,
       "googleId": "",
+      "userStatus": "online",
       "ip": "186.66.83.17",
       "address": {
         "address": "109 Summit Street",
