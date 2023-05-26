@@ -260,3 +260,27 @@
   --tw-shadow-colored: 0 .3125rem .625rem 0 var(--tw-shadow-color);
   box-shadow         : var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+
+.text-xss {
+  font-size: 10px;
+}
+
+.border-shadow {
+  box-shadow: 0 1px 0 rgba(209, 213, 219, 0.5);
+}
+
+.td-item {
+  @apply p-2 text-center align-middle text-sm max-w-max;
+}
+
+.tr-item {
+  @apply bg-transparent border-b border-gray-200 border-shadow;
+}
+
+.th-item {
+  @apply px-5 py-3 text-xs text-slate-400 font-semibold text-left align-middle bg-transparent;
+  white-space   : nowrap;
+  opacity       : 0.7;
+  text-transform: uppercase;
+  max-width     : max-content;
+}

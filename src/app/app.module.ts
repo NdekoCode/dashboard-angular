@@ -20,6 +20,7 @@ import { StatisticDetailsComponent } from './shared/components/statistic-details
 import { UserTableItemComponent } from './shared/components/user-table-item/user-table-item.component';
 import { UserTableListComponent } from './shared/components/user-table-list/user-table-list.component';
 import { ChartTemplateComponent } from './shared/components/chart-template/chart-template.component';
+import { DateAgoPipe } from './shared/pipes/date-ago.pipe';
 Chart.register(...registerables);
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ Chart.register(...registerables);
     StatisticDetailsComponent,
     RoundedBarChartComponent,
     ChartTemplateComponent,
+    DateAgoPipe,
   ],
   imports: [
     BrowserModule,
