@@ -13,17 +13,26 @@ export class UserTableListComponent implements OnInit {
   filteredUser!: userTest[];
   isLoading: boolean = true;
   userSearch: string = '';
+  maxData = 100;
+  maxPagination: number = 0;
+  page = 1;
+  limit = 20;
   constructor(
     private _userService: UsersService,
     private _apiConfig: ApiConfigService
   ) {}
 
   ngOnInit(): void {
-    this._userService.getUserList().subscribe({
+    this.getData();
+    this.getFilteredUser(this.userSearch);
+  }
+  getData() {
+    this._userService.getUsers(this.page, this.limit).subscribe({
       next: (data) => {
         this.users = data;
         this.filteredUser = this.users;
         this.isLoading = false;
+        this.maxPagination = this.maxData / this.users.length;
       },
       error: (err) => {
         this.isLoading = false;
@@ -31,7 +40,6 @@ export class UserTableListComponent implements OnInit {
         this._apiConfig.handleError(err);
       },
     });
-    this.getFilteredUser(this.userSearch);
   }
   getFilteredUser(value: string = '') {
     if (!value) {
@@ -48,6 +56,24 @@ export class UserTableListComponent implements OnInit {
           user?.company?.department.includes(value)
       );
     }
+  }
+  nextPage() {
+    console.log(this.page <= this.maxPagination, this.page, this.maxPagination);
+    if (this.page < this.maxPagination) {
+      this.page++;
+      this.getData();
+      this.getFilteredUser(this.userSearch);
+    }
+  }
+
+  prevPage() {
+    if (this.page > 0) {
+      this.page--;
+    } else {
+      this.page = 1;
+    }
+    this.getData();
+    this.getFilteredUser(this.userSearch);
   }
   searchUser(searchValue: string) {
     this.userSearch = searchValue;

@@ -14,4 +14,9 @@ export class UsersService {
   getUserList(): Observable<userTest[]> {
     return this._http.get<userTest[]>(this._api.BASE_URL + '/users');
   }
+  getUsers(page: number, limit: number): Observable<userTest[]> {
+    const skip = (page - 1) * limit;
+    const url = `${this._api.BASE_URL}/users?_start=${skip}&_limit=${limit}`;
+    return this._http.get<userTest[]>(url);
+  }
 }
