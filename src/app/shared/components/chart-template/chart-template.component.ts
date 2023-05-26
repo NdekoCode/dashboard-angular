@@ -15,8 +15,9 @@ export class ChartTemplateComponent implements AfterViewInit {
   @Input() chartStyle: object = {
     display: 'block',
     boxSizing: 'border-box',
-    minHeight: '250px',
-    maxHeight: '300px',
+    minHeight: '200px',
+    height: 'max-content',
+    maxHeight: '250px',
     width: '100%',
   };
 

@@ -246,5 +246,17 @@
 @tailwind utilities;
 
 .card-item {
-  @apply min-w-[180px] max-w-max min-h-[80px] max-h-max p-3 mb-3 border border-gray-100 rounded-md;
+  @apply min-w-[45%] max-w-max min-h-[120px] max-h-max p-3 mb-3 border border-gray-100 rounded-md;
+}
+
+.shadow-soft-xl {
+  --tw-shadow        : 0 20px 27px 0 rgba(0, 0, 0, 0.05);
+  --tw-shadow-colored: 0 20px 27px 0 var(--tw-shadow-color);
+  box-shadow         : var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-soft-2xl {
+  --tw-shadow        : 0 .3125rem .625rem 0 rgba(0, 0, 0, .12);
+  --tw-shadow-colored: 0 .3125rem .625rem 0 var(--tw-shadow-color);
+  box-shadow         : var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
