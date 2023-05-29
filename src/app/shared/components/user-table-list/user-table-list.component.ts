@@ -45,7 +45,7 @@ export class UserTableListComponent implements OnInit {
     if (!value) {
       this.filteredUser = this.users;
     } else {
-      this.filteredUser = this.users.filter(
+      this.filteredUser = this.filteredUser.filter(
         (user) =>
           user.firstName.includes(value) ||
           user.lastName.includes(value) ||

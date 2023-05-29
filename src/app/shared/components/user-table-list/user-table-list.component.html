@@ -104,24 +104,21 @@
             </td>
             <td class="td-item">
               <span
-                *ngIf="user?.userStatus === 'online'; else notOnline"
-                class="bg-gradient-to-tl text-xss from-green-600 to-lime-400 px-2 py-1 rounded-md text-xs rounded-1.8 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white"
+                *ngIf="user?.userStatus === 'verified'"
+                class="bg-gradient-to-tl text-xss from-green-600 to-lime-400 px-2 py-1 rounded-md text-xs rounded-1.8 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white opacity-50"
               >
                 {{ user?.userStatus | titlecase }}
               </span>
-              <ng-template #notOnline>
-                <span
-                  *ngIf="user?.userStatus === 'suspended'; else notSuspend"
-                  class="bg-gradient-to-tl text-xss from-red-600 to-red-300 px-2 py-1 rounded-md text-xs rounded-1.8 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white"
-                  >{{ user.userStatus | titlecase }}</span
-                >
-                <ng-template #notSuspend>
-                  <span
-                    class="bg-gradient-to-tl text-xss from-slate-600 to-slate-300 px-2 py-1 rounded-md text-xs rounded-1.8 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white"
-                    >{{ user?.userStatus | titlecase }}</span
-                  >
-                </ng-template>
-              </ng-template>
+              <span
+                *ngIf="user?.userStatus === 'suspended'"
+                class="bg-gradient-to-tl text-xss from-red-600 to-red-300 px-2 py-1 rounded-md text-xs rounded-1.8 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white opacity-50"
+                >{{ user.userStatus | titlecase }}</span
+              >
+              <span
+                *ngIf="user?.userStatus === 'unverify'"
+                class="bg-gradient-to-tl text-xss from-slate-600 to-slate-300 px-2 py-1 rounded-md text-xs rounded-1.8 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white opacity-50"
+                >{{ user?.userStatus | titlecase }}</span
+              >
             </td>
             <td class="td-item">
               <span
@@ -354,14 +351,14 @@
               <div class="flex items-center gap-1">
                 <a
                   href="#"
-                  class="px-1 py-0.5 rounded text-xs font-semibold leading-tight underline bg-green-200 text-slate-400"
+                  class="px-3 py-1 rounded text-xs font-semibold leading-tight bg-green-200 text-slate-400"
                 >
                   View
                 </a>
 
                 <a
                   href="#"
-                  class="px-1 py-0.5 rounded text-xs font-semibold leading-tight underline bg-orange-100 text-slate-400"
+                  class="px-3 py-1 rounded text-xs font-semibold leading-tight bg-orange-100 text-slate-400"
                 >
                   Edit
                 </a>

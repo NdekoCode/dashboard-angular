@@ -34,10 +34,10 @@ function generateRandomDates() {
 (async () => {
   const file = await fs.readFile(pathFile, "utf8");
   const newData = JSON.parse(file);
-  const userStatus = [true, false];
+  const userStatus = ["suspended", "unverify", "verified"];
   const userFile = newData.users.map((user) => {
     const randomIndex = parseInt(Math.random() * userStatus.length);
-    user.isTfaEnabled = userStatus[randomIndex];
+    user.userStatus = userStatus[randomIndex];
     return user;
   });
   await fs.writeFile(pathFile, JSON.stringify({ users: userFile }));

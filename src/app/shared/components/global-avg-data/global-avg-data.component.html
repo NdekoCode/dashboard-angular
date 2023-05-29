@@ -88,37 +88,55 @@
             {{ usersOnline.length }}
           </p>
         </div>
-
-        <div class="card-item">
-          <div class="flex items-center justify-between">
-            <h6 class="text-sm text-gray-400">User Unverify</h6>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-5 h-5"
-              viewBox="0 0 512 512"
-            >
-              <path
-                d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
-                fill="none"
-                stroke="currentColor"
-                stroke-miterlimit="10"
-                stroke-width="32"
-              />
-              <path
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="32"
-                d="M352 176L217.6 336 160 272"
-              />
-            </svg>
+        <div class="card-item shadow-soft-xl rounded-2xl bg-clip-border">
+          <div class="relative flex flex-col min-w-0 break-words bg-white">
+            <div class="flex-auto p-3">
+              <div class="flex flex-row items-center -mx-3">
+                <div class="flex-none w-2/3 max-w-full px-3">
+                  <div>
+                    <h6
+                      class="mb-0 font-sans leading-normal font-semibold text-gray-400"
+                    >
+                      User Unverify
+                    </h6>
+                    <h5 class="mb-0 font-bold">
+                      <span class="text-2xl font-bold text-green-700">
+                        {{ userUnverify.length }}</span
+                      >
+                    </h5>
+                  </div>
+                </div>
+                <div class="px-3 text-right basis-1/3">
+                  <div
+                    class="flex items-center justify-center text-white w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-5 h-5"
+                      viewBox="0 0 512 512"
+                    >
+                      <path
+                        d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-miterlimit="10"
+                        stroke-width="32"
+                      />
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="32"
+                        d="M352 176L217.6 336 160 272"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <p class="text-2xl font-bold text-orange-700">
-            {{ userUnverify.length }}
-          </p>
         </div>
-
         <div class="card-item">
           <div class="flex items-center justify-between">
             <h6 class="text-sm text-gray-400">User Suspended</h6>
