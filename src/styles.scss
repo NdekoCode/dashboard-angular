@@ -246,13 +246,20 @@
 @tailwind utilities;
 
 .card-item {
-  @apply min-w-[45%] max-w-max min-h-[120px] max-h-max p-3 mb-3 border border-gray-100 rounded-md;
+  @apply min-w-[45%] max-w-max min-h-[120px] max-h-max p-3 mb-3 border border-gray-100 shadow-soft rounded-lg bg-clip-border;
 }
 
 .shadow-soft-xl {
   --tw-shadow        : 0 20px 27px 0 rgba(0, 0, 0, 0.05);
   --tw-shadow-colored: 0 20px 27px 0 var(--tw-shadow-color);
   box-shadow         : var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-soft {
+  --tw-shadow        : 0 10px 20px 0 rgba(0, 0, 0, 0.04);
+  --tw-shadow-colored: 0 10px 20px 0 var(--tw-shadow-color);
+  box-shadow         : var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+
 }
 
 .shadow-soft-2xl {
@@ -299,4 +306,12 @@
 
 .fade-opacity {
   animation: fadeIn 0.35 forwards;
+}
+
+.point {
+  @apply p-[2px] bg-gray-400 rounded-full;
+}
+
+.x-centered {
+  @apply flex items-center;
 }

@@ -21,6 +21,7 @@ import { UserTableItemComponent } from './shared/components/user-table-item/user
 import { UserTableListComponent } from './shared/components/user-table-list/user-table-list.component';
 import { ChartTemplateComponent } from './shared/components/chart-template/chart-template.component';
 import { DateAgoPipe } from './shared/pipes/date-ago.pipe';
+import { ModalViewComponent } from './shared/components/modal-view/modal-view.component';
 Chart.register(...registerables);
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ Chart.register(...registerables);
     RoundedBarChartComponent,
     ChartTemplateComponent,
     DateAgoPipe,
+    ModalViewComponent,
   ],
   imports: [
     BrowserModule,

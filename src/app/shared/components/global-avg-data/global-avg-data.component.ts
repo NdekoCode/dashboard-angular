@@ -10,9 +10,10 @@ import { UsersService } from './../../../services/users.service';
 })
 export class GlobalAvgDataComponent {
   users!: userTest[];
-  usersOnline: userTest[] = [];
+  users2FA: userTest[] = [];
   userSuspended: userTest[] = [];
-  userUnverify: userTest[] = [];
+  usersVerified: userTest[] = [];
+  usersUnverified: userTest[] = [];
   isLoading: boolean = true;
 
   constructor(
@@ -24,10 +25,9 @@ export class GlobalAvgDataComponent {
       next: (data) => {
         this.users = data;
         this.isLoading = false;
-        this.userUnverify = this.users.filter((user) => !user.verified);
-        this.usersOnline = this.users.filter(
-          (user) => user.userStatus === 'online'
-        );
+        this.usersUnverified = this.users.filter((user) => !user.verified);
+        this.usersVerified = this.users.filter((user) => user.verified);
+        this.users2FA = this.users.filter((user) => user.isTfaEnabled);
         this.userSuspended = this.users.filter(
           (user) => user.userStatus === 'suspended'
         );
