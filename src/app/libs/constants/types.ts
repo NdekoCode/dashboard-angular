@@ -72,6 +72,20 @@ export type userTest = {
   company?: Company;
   userAgent?: string;
   userStatus?: string;
+  createdAt: Date;
+  lastConnection: Date;
+  registrationSource: string;
+};
+
+export type DateAgoInterval = {
+  year: number;
+  month: number;
+  week: number;
+  day: number;
+  hour: number;
+  minute: number;
+  second: number;
+  [key: string]: number;
 };
 type Address = {
   address: string;

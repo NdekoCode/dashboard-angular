@@ -1,5 +1,5 @@
 <div
-  class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl rounded-2xl bg-clip-border"
+  class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-soft rounded-2xl bg-clip-border"
 >
   <div
     class="flex items-center justify-between p-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent"
@@ -36,9 +36,11 @@
             </svg>
           </button>
           <input
+            #search
             type="text"
             class="pl-10 text-sm focus:shadow-soft-primary-outline ease-soft w-1/2 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
             placeholder="Type here..."
+            (input)="searchUser(search.value)"
           />
         </div>
       </div>
@@ -50,43 +52,30 @@
         aria-describedby="table-user"
         class="items-center w-full mb-0 align-top border-gray-200 text-slate-500"
       >
-        <thead class="align-bottom">
-          <tr>
-            <th
-              class="px-6 py-3 text-xs font-semibold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"
-            >
-              Users
+        <thead class="w-full align-bottom">
+          <tr class="bg-transparent border-shadow">
+            <th class="th-item">
+              <span>Users</span>
             </th>
-            <th
-              class="px-6 py-3 pl-2 text-xs font-semibold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"
-            >
-              Function
+            <th class="th-item">Function</th>
+            <th class="th-item">Status</th>
+            <th class="th-item">Member since</th>
+
+            <th class="th-item">Registration Source</th>
+
+            <th class="th-item">2FA</th>
+            <th class="th-item">
+              <span>Last Connection</span>
             </th>
-            <th
-              class="px-6 py-3 text-xs font-semibold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"
-            >
-              Status
-            </th>
-            <th
-              class="px-6 py-3 text-xs font-semibold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"
-            >
-              Member since
-            </th>
-            <th
-              class="px-6 py-3 font-semibold capitalize align-middle bg-transparent border-b border-gray-200 border-solid shadow-none tracking-none whitespace-nowrap text-slate-400 opacity-70"
-            >
-              Action
-            </th>
+            <th class="th-item">Action</th>
           </tr>
         </thead>
         <div class="flex items-center justify-center" *ngIf="isLoading">
           <h2 class="text-xl font-semibold text-center">Loading....</h2>
         </div>
-        <tbody *ngIf="users && !isLoading; else notUser">
-          <tr *ngFor="let user of users">
-            <td
-              class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent"
-            >
+        <tbody *ngIf="filteredUser && !isLoading; else notUser">
+          <tr class="tr-item" *ngFor="let user of filteredUser">
+            <td class="td-item">
               <div class="flex px-2 py-1">
                 <div>
                   <img
@@ -105,9 +94,7 @@
                 </div>
               </div>
             </td>
-            <td
-              class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent"
-            >
+            <td class="td-item">
               <p class="mb-0 text-xs font-semibold leading-tight">
                 {{ user.company?.title }}
               </p>
@@ -115,34 +102,324 @@
                 {{ user.company?.department }}
               </p>
             </td>
-            <td
-              class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent"
-            >
+            <td class="td-item">
               <span
-                class="bg-gradient-to-tl px-3 py-2 red-gradient rounded-md text-xs rounded-1.8 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white"
+                *ngIf="user?.userStatus === 'verified'"
+                class="bg-gradient-to-tl text-xss from-green-600 to-lime-400 px-2 py-1 rounded-md text-xs rounded-1.8 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white opacity-50"
               >
-                {{ user?.userStatus === "online" ? "Online" : "Offline" }}
+                {{ user?.userStatus | titlecase }}
               </span>
-            </td>
-            <td
-              class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent"
-            >
-              <span class="text-xs font-semibold leading-tight text-slate-400"
-                >23/04/18</span
+              <span
+                *ngIf="user?.userStatus === 'suspended'"
+                class="bg-gradient-to-tl text-xss from-red-600 to-red-300 px-2 py-1 rounded-md text-xs rounded-1.8 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white opacity-50"
+                >{{ user.userStatus | titlecase }}</span
+              >
+              <span
+                *ngIf="user?.userStatus === 'unverify'"
+                class="bg-gradient-to-tl text-xss from-slate-600 to-slate-300 px-2 py-1 rounded-md text-xs rounded-1.8 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white opacity-50"
+                >{{ user?.userStatus | titlecase }}</span
               >
             </td>
-            <td
-              class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent"
-            >
-              <a
-                href="#"
+            <td class="td-item">
+              <span
                 class="text-xs font-semibold leading-tight text-slate-400"
+                >{{ user.createdAt }}</span
               >
-                Edit
-              </a>
+            </td>
+
+            <td class="td-item">
+              <span
+                *ngIf="user.registrationSource === 'invitation'; else notInvit"
+                class="inline-block text-center text-xss text-slate-400"
+              >
+                <svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  class="w-5 h-5"
+                  viewBox="0 0 1000 1000"
+                  xml:space="preserve"
+                >
+                  <g>
+                    <g
+                      transform="translate(0.000000,511.000000) scale(0.100000,-0.100000)"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M4757.2,4978.9c-59.3-16-159.6-59.3-223.4-93.5c-109.4-63.8-1117.1-1019.1-1117.1-1060.1c0-11.4,640.6-20.5,1595.9-20.5c877.7,0,1595.9,9.1,1595.9,18.2c0,11.4-223.4,239.4-494.7,508.4c-515.2,506.1-620.1,585.9-859.5,649.7C5110.6,5020,4900.8,5020,4757.2,4978.9z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M1722.8,3674.9c-9.1-6.8-16-766-16-1684.8V319l52.4-36.5c47.9-34.2,50.2-34.2,57,38.8c2.3,41,6.8,788.8,11.4,1659.7l4.6,1584.5l3141.6,6.8l3139.3,4.6V1912.6c0-1760-2.3-1734.9,100.3-1623.2c34.2,38.8,36.5,182.4,31.9,1716.7l-6.8,1673.4l-3251,6.8C3200.1,3688.6,1729.6,3684,1722.8,3674.9z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M6549.1,2701.4c-111.7-50.2-177.9-161.9-186.9-321.5c-13.7-237.1,100.3-376.2,319.2-392.1c232.5-18.2,371.6,120.8,371.6,369.3c0,102.6-13.7,157.3-52.4,218.8C6916.2,2715.1,6708.7,2769.8,6549.1,2701.4z M6838.7,2553.2c47.9-38.8,54.7-63.8,54.7-196.1c0-132.2-6.8-157.3-54.7-196.1c-31.9-25.1-88.9-43.3-139.1-43.3c-123.1,0-182.4,79.8-182.4,239.4c0,159.6,59.3,239.4,182.4,239.4C6749.8,2596.5,6806.7,2578.3,6838.7,2553.2z"
+                      />
+                      <path
+                        d="M2322.4,2357.2v-353.4h68.4h68.4v353.4v353.4h-68.4h-68.4V2357.2z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M2596,2357.2v-353.4h68.4h68.4v218.9c0,118.5,9.1,212,18.2,205.2c11.4-6.9,75.2-104.9,143.6-216.6c114-191.5,127.7-207.5,198.3-207.5h73v353.4v353.4h-68.4h-66.1l-6.8-221.2l-6.8-221.1l-134.5,221.1c-125.4,209.8-136.8,221.2-209.7,221.2H2596V2357.2z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M3362,2421c57-159.6,116.3-319.2,127.7-353.4c18.2-54.7,36.5-63.8,104.9-63.8h84.4l114,323.7c63.8,180.1,116.3,339.7,120.8,353.4c4.6,20.5-18.2,29.6-70.7,29.6h-77.5l-77.5-250.8c-43.3-136.8-82.1-250.8-88.9-250.8c-6.8,0-50.2,109.4-93.5,246.2l-79.8,243.9l-84.3,6.8l-84.4,6.8L3362,2421z"
+                      />
+                      <path
+                        d="M4009.4,2357.2v-353.4h68.4h68.4v353.4v353.4h-68.4h-68.4V2357.2z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M4237.4,2653.5c0-52.4,9.1-57,102.6-57h102.6v-296.4v-296.4h79.8h79.8v296.4v296.4h102.6c93.5,0,102.6,4.6,102.6,57v57h-285h-285V2653.5z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M5010.3,2649c-13.7-34.2-47.9-125.4-77.5-200.6c-29.6-75.2-79.8-205.2-111.7-289.5l-59.3-155h77.5c68.4,0,82.1,9.1,104.9,79.8l27.4,79.8h143.6H5261l27.3-79.8c25.1-70.7,38.8-79.8,107.2-79.8c88.9,0,95.8-31.9-72.9,387.6l-123.1,307.8l-82.1,6.8C5044.5,2712.8,5033.1,2706,5010.3,2649z M5169.9,2398.2l47.9-120.8h-102.6h-102.6l45.6,120.8c25.1,63.8,45.6,123.1,45.6,127.7C5103.7,2550.9,5126.5,2505.3,5169.9,2398.2z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M5422.9,2653.5c0-52.4,6.8-57,114-57h114v-296.4v-296.4h68.4h68.4v296.4v296.4h114c107.1,0,114,4.6,114,57v57h-296.4h-296.4V2653.5z"
+                      />
+                      <path
+                        d="M6106.9,2357.2v-353.4h68.4h68.4v353.4v353.4h-68.4h-68.4V2357.2z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M7178.3,2357.2v-353.4h68.4h66.1l6.8,221.2l6.8,221.1l134.5-221.1c125.4-209.8,136.8-221.2,209.7-221.2h77.5v353.4v353.4h-68.4h-66.1l-6.8-228l-6.8-228l-136.8,228c-127.7,212-141.4,228-209.8,228h-75.2V2357.2z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M8409.4,1219.5c0-661.1,4.6-809.3,29.6-795.6c16,9.1,248.5,150.5,515.2,312.3l485.6,291.8l-155,159.6c-86.7,86.6-319.2,312.3-515.2,501.6l-360.2,342V1219.5z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M1444.7,1848.8c-61.6-57-294.1-282.7-515.2-499.3L525.9,957.4l513-298.7c282.7-164.1,517.5-294.1,522.1-289.5c6.8,4.6,6.8,364.8,4.6,797.9l-6.8,788.8L1444.7,1848.8z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M7834.9-203c-950.7-572.2-1725.8-1051-1721.3-1064.7c9.1-38.8,3355.9-3362.7,3383.2-3362.7c73,0,77.5,171,70.7,2820.1l-6.8,2649.1L7834.9-203z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M430.1-1871.9c0-2268.4,4.6-2633.2,34.2-2703.8c18.2-45.6,43.3-77.5,54.7-73c11.4,2.3,779.7,763.7,1707.6,1687c1208.3,1199.2,1682.5,1684.8,1662,1700.7c-16,11.4-766,449.1-1668.8,973.5C1317,234.7,544.1,683.8,505.4,708.9l-75.2,45.6V-1871.9z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M2422.7-3091.6L715.1-4787.7h4297.4L9310-4790L7999.1-3476.9c-720.4,720.4-1493.3,1486.4-1716.7,1700.7l-403.5,389.8l-419.5-255.3c-230.2-139.1-430.9-253.1-444.6-253.1c-22.8,0-681.7,369.3-836.7,471.9C4134.8-1395.4,4030-1495.7,2422.7-3091.6z"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </span>
+              <ng-template #notInvit>
+                <span
+                  *ngIf="user?.registrationSource === 'RS'; else notRS"
+                  class="inline-block text-center text-xss text-slate-400"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    viewBox="0 0 512 512"
+                  >
+                    <circle
+                      cx="128"
+                      cy="256"
+                      r="48"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="32"
+                    />
+                    <circle
+                      cx="384"
+                      cy="112"
+                      r="48"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="32"
+                    />
+                    <circle
+                      cx="384"
+                      cy="400"
+                      r="48"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="32"
+                    />
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="32"
+                      d="M169.83 279.53l172.34 96.94M342.17 135.53l-172.34 96.94"
+                    /></svg
+                ></span>
+                <ng-template #notRS>
+                  <span class="inline-block text-center text-xss text-slate-400"
+                    ><svg
+                      class="svg-icon"
+                      fill="currentColor"
+                      class="w-5 h-5"
+                      style="overflow: hidden"
+                      viewBox="0 0 1024 1024"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M333.8 603.3h356.3c16 0 28.9-12.9 28.9-28.9 0-16-12.9-28.9-28.9-28.9H333.8c-16 0-28.9 12.9-28.9 28.9 0.1 16.1 13 28.9 28.9 28.9zM333.8 813.7h356.3c16 0 28.9-12.9 28.9-28.9 0-16-12.9-28.9-28.9-28.9H333.8c-16 0-28.9 12.9-28.9 28.9 0.1 16 13 28.9 28.9 28.9zM333.8 393h356.3c16 0 28.9-12.9 28.9-28.9 0-16-12.9-28.9-28.9-28.9H333.8c-16 0-28.9 12.9-28.9 28.9 0.1 16 13 28.9 28.9 28.9zM386.7 182.7h250.5c16 0 28.9-12.9 28.9-28.9 0-16-12.9-28.9-28.9-28.9h-40.3a91.7 91.7 0 0 0 6.4-33.6C603.3 41 562.4 0 512 0s-91.3 41-91.3 91.3c0 11.9 2.3 23.2 6.4 33.6h-40.3c-16 0-28.9 12.9-28.9 28.9s12.9 28.9 28.8 28.9z m72-91.4c0-29.4 23.9-53.3 53.3-53.3s53.3 23.9 53.3 53.3c0 12.7-4.5 24.4-12 33.6h-82.6c-7.5-9.1-12-20.8-12-33.6z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M853.3 121h-98.9c-18 0-32.5 14.5-32.5 32.5s14.5 32.5 32.5 32.5h98.9c14.7 0 26.6 11.9 26.6 26.6v719.9c0 14.7-11.9 26.6-26.6 26.6H170.7c-14.7 0-26.6-11.9-26.6-26.6v-720c0-14.7 11.9-26.6 26.6-26.6h98.9c18 0 32.5-14.5 32.5-32.5s-14.5-32.5-32.5-32.5h-98.9c-50.5 0-91.6 41-91.6 91.6v719.9c0 50.5 41 91.6 91.6 91.6h682.7c50.5 0 91.6-41 91.6-91.6V212.5c-0.1-50.6-41.1-91.5-91.7-91.5z"
+                        fill="currentColor"
+                      /></svg
+                  ></span>
+                </ng-template>
+              </ng-template>
+            </td>
+
+            <td class="td-item">
+              <span
+                *ngIf="user.isTfaEnabled; else notTFA"
+                class="font-semibold leading-tight text-green-400 text-xss"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-miterlimit="10"
+                    stroke-width="32"
+                  />
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="32"
+                    d="M352 176L217.6 336 160 272"
+                  />
+                </svg>
+              </span>
+              <ng-template #notTFA>
+                <span class="font-semibold leading-tight text-red-400 text-xss">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-miterlimit="10"
+                      stroke-width="32"
+                    />
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="32"
+                      d="M320 320L192 192M192 320l128-128"
+                    />
+                  </svg>
+                </span>
+              </ng-template>
+            </td>
+            <td class="td-item">
+              <span
+                class="font-semibold leading-tight text-xss text-slate-400"
+                >{{ user.lastConnection | dateAgo }}</span
+              >
+            </td>
+            <td class="td-item">
+              <div class="flex items-center gap-1">
+                <a
+                  href="#"
+                  class="px-3 py-1 rounded text-xs font-semibold leading-tight bg-green-200 text-slate-400"
+                >
+                  View
+                </a>
+
+                <a
+                  href="#"
+                  class="px-3 py-1 rounded text-xs font-semibold leading-tight bg-orange-100 text-slate-400"
+                >
+                  Edit
+                </a>
+              </div>
             </td>
           </tr>
         </tbody>
+        <tfoot class="block w-full py-5 mx-auto">
+          <div class="flex items-center justify-center w-full mx-auto">
+            <!-- Previous Button -->
+            <button
+              (click)="prevPage()"
+              [disabled]="page <= 1"
+              [hidden]="page <= 1"
+              [ngClass]="{
+                'is-disabled cursor-not-allowed opacity-30': page <= 1
+              }"
+              class="inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="w-5 h-5 mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Previous
+            </button>
+            <button
+              (click)="nextPage()"
+              [disabled]="page >= maxPagination"
+              [ngClass]="{
+                'is-disabled cursor-not-allowed opacity-30':
+                  page >= maxPagination
+              }"
+              [hidden]="page >= maxPagination"
+              class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            >
+              Next
+              <svg
+                aria-hidden="true"
+                class="w-5 h-5 ml-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </tfoot>
         <ng-template #notUser>
           <h2 class="text-xl font-semibold text-center">No user found</h2>
         </ng-template>

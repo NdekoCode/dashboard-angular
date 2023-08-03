@@ -27,12 +27,12 @@ export class ChartTemplateComponent implements AfterViewInit {
   chartDatalabels: any[] = [];
   ngAfterViewInit() {
     this.ctx = document.getElementById(this.chartId) as HTMLCanvasElement;
-    console.log(this.ctx);
     this.ctx = this.ctx.getContext('2d') as CanvasRenderingContext2D;
     this.config = this.chartConfig;
 
     if (this.chartInstance === undefined) {
       this.chartInstance = new Chart(this.ctx, this.config);
     }
+    console.log(this.config);
   }
 }
