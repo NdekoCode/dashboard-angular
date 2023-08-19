@@ -11,7 +11,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "Internal-CRM-Dashboard": {
+    "dashboard-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -25,7 +25,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/internal-crm-dashboard",
+            "outputPath": "dist/dashboard-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Internal-CRM-Dashboard:build:production"
+              "browserTarget": "dashboard-angular:build:production"
             },
             "development": {
-              "browserTarget": "Internal-CRM-Dashboard:build:development"
+              "browserTarget": "dashboard-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Internal-CRM-Dashboard:build"
+            "browserTarget": "dashboard-angular:build"
           }
         },
         "test": {

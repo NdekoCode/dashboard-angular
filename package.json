@@ -1,5 +1,5 @@
 {
-  "name": "internal-crm-dashboard",
+  "name": "dashboard-angular",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
