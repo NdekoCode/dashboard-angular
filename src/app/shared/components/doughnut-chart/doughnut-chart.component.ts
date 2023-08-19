@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ChartConfiguration } from 'chart.js';
 import { userTest } from './../../../libs/constants/types';
 import { UsersService } from './../../../services/users.service';
@@ -8,8 +8,8 @@ import { UsersService } from './../../../services/users.service';
   templateUrl: './doughnut-chart.component.html',
 })
 export class DoughnutChartComponent implements OnInit {
+  @Input() users: userTest[] = [];
   config!: ChartConfiguration | any;
-  users: userTest[] = [];
   users2FA: number = 0;
   userSuspended: number = 0;
   usersVerified: number = 0;
@@ -17,13 +17,8 @@ export class DoughnutChartComponent implements OnInit {
   isLoading: boolean = true;
   constructor(private _userService: UsersService) {}
   ngOnInit() {
-    this._userService.getUserList().subscribe({
-      next: (data) => {
-        this.users = data;
-        this.isLoading = false;
-        this.getUsersFiltered();
-      },
-    });
+    this.isLoading = false;
+    this.getUsersFiltered();
   }
   getUsersFiltered() {
     this.usersVerified = this.users?.filter((user) => user.verified).length;

@@ -76,7 +76,7 @@
         <tbody *ngIf="filteredUser && !isLoading; else notUser">
           <tr class="tr-item" *ngFor="let user of filteredUser">
             <td class="td-item">
-              <div class="flex px-2 py-1">
+              <div class="flex px-2 py-1 w-max">
                 <div>
                   <img
                     [src]="user.avatar"
@@ -86,7 +86,7 @@
                 </div>
                 <div class="flex flex-col justify-center">
                   <h6 class="mb-0 text-sm leading-normal">
-                    {{ user.firstName }} {{ user.lastName }}
+                    {{ user.firstName + " " + user.lastName }}
                   </h6>
                   <p class="mb-0 text-xs leading-tight text-slate-400">
                     {{ user.email }}
@@ -351,14 +351,14 @@
               <div class="flex items-center gap-1">
                 <a
                   href="#"
-                  class="px-3 py-1 rounded text-xs font-semibold leading-tight bg-green-200 text-slate-400"
+                  class="px-3 py-1 text-xs font-semibold leading-tight bg-green-200 rounded text-slate-400"
                 >
                   View
                 </a>
 
                 <a
                   href="#"
-                  class="px-3 py-1 rounded text-xs font-semibold leading-tight bg-orange-100 text-slate-400"
+                  class="px-3 py-1 text-xs font-semibold leading-tight bg-orange-100 rounded text-slate-400"
                 >
                   Edit
                 </a>
@@ -371,10 +371,10 @@
             <!-- Previous Button -->
             <button
               (click)="prevPage()"
-              [disabled]="page <= 1"
-              [hidden]="page <= 1"
+              [disabled]="currentPage <= 1"
+              [hidden]="currentPage <= 1"
               [ngClass]="{
-                'is-disabled cursor-not-allowed opacity-30': page <= 1
+                'is-disabled cursor-not-allowed opacity-30': currentPage <= 1
               }"
               class="inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
             >
@@ -395,12 +395,12 @@
             </button>
             <button
               (click)="nextPage()"
-              [disabled]="page >= maxPagination"
+              [disabled]="currentPage >= totalPages"
               [ngClass]="{
                 'is-disabled cursor-not-allowed opacity-30':
-                  page >= maxPagination
+                  currentPage >= totalPages
               }"
-              [hidden]="page >= maxPagination"
+              [hidden]="currentPage >= totalPages"
               class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
             >
               Next
