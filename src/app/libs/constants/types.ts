@@ -72,8 +72,8 @@ export type userTest = {
   company?: Company;
   userAgent?: string;
   userStatus?: string;
-  createdAt: Date;
-  lastConnection: Date;
+  createdAt: Date | string;
+  lastConnection: string | Date;
   registrationSource: string;
 };
 

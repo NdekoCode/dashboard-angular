@@ -285,11 +285,10 @@
 }
 
 .th-item {
-  @apply px-5 py-3 text-xs text-slate-400 font-semibold text-left align-middle bg-transparent;
+  @apply p-3 text-xs text-slate-400 max-w-max font-semibold text-left align-middle bg-transparent;
   white-space   : nowrap;
   opacity       : 0.7;
   text-transform: uppercase;
-  max-width     : max-content;
 }
 
 @keyframes fadeIn {

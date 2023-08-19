@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { userTest } from './../../../libs/constants/types';
-import { ApiConfigService } from './../../../services/api-config.service';
 import { UsersService } from './../../../services/users.service';
 
 @Component({
@@ -9,40 +8,49 @@ import { UsersService } from './../../../services/users.service';
   styleUrls: ['./user-table-list.component.scss'],
 })
 export class UserTableListComponent implements OnInit {
+  currentPage = 1;
+  totalPages = 0;
   users!: userTest[];
   filteredUser!: userTest[];
   isLoading: boolean = true;
   userSearch: string = '';
   maxData = 100;
   maxPagination: number = 0;
-  page = 1;
-  limit = 20;
-  constructor(
-    private _userService: UsersService,
-    private _apiConfig: ApiConfigService
-  ) {}
+  constructor(private _userService: UsersService) {}
 
   ngOnInit(): void {
     this.getData();
-    this.getFilteredUser(this.userSearch);
+    this.totalPages = this._userService.getTotalPages();
+    if (this.filteredUser) {
+      this.isLoading = false;
+    }
+  }
+
+  loadUserList(): void {
+    this.users = this._userService.getUserList(this.currentPage);
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.getData();
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.getData();
+    }
   }
   getData() {
-    this._userService.getUsers(this.page, this.limit).subscribe({
-      next: (data) => {
-        this.users = data;
-        this.filteredUser = this.users;
-        this.isLoading = false;
-        this.maxPagination = this.maxData / this.users.length;
-      },
-      error: (err) => {
-        this.isLoading = false;
-        console.error(err);
-        this._apiConfig.handleError(err);
-      },
-    });
+    this.loadUserList();
+
+    this.getFilteredUser(this.userSearch);
+    this.maxPagination = this.maxData / this.users.length;
   }
   getFilteredUser(value: string = '') {
-    if (!value) {
+    if (value.trim().length < 1) {
       this.filteredUser = this.users;
     } else {
       this.filteredUser = this.filteredUser.filter(
@@ -56,24 +64,6 @@ export class UserTableListComponent implements OnInit {
           user?.company?.department.includes(value)
       );
     }
-  }
-  nextPage() {
-    console.log(this.page <= this.maxPagination, this.page, this.maxPagination);
-    if (this.page < this.maxPagination) {
-      this.page++;
-      this.getData();
-      this.getFilteredUser(this.userSearch);
-    }
-  }
-
-  prevPage() {
-    if (this.page > 0) {
-      this.page--;
-    } else {
-      this.page = 1;
-    }
-    this.getData();
-    this.getFilteredUser(this.userSearch);
   }
   searchUser(searchValue: string) {
     this.userSearch = searchValue;

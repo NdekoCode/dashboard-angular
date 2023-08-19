@@ -33,6 +33,5 @@ export class ChartTemplateComponent implements AfterViewInit {
     if (this.chartInstance === undefined) {
       this.chartInstance = new Chart(this.ctx, this.config);
     }
-    console.log(this.config);
   }
 }
